@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+
+
+{% block title %} upsolve {% endblock %}
+
+{% block content%}
+  <div class="container mt-4 w-75">
+    <h2 class="text-center mb-4">Upsolve Problems</h2>
+    <ul class="list-group">
+      {% for problem in problems %}
+      <li class="list-group-item">
+        <a class="text-decoration-none" href="{% url 'upsolve-problem' problem.id %}">{{ problem.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+{% endblock %}

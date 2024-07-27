@@ -1,0 +1,12 @@
+{% extends "./base.html" %}
+{% block title %} home {% endblock %}
+{% block content %}
+  <div class="container mt-5 d-flex flex-column align-items-center justify-content-center">
+  <h1>Code Incident</h1>
+
+  <form class="mt-3 d-flex flex-column w-50" action="#" method="POST">
+    {% csrf_token %}
+    <input class="form-control" type="text" name="handle" id="handle" placeholder="pick a handle">
+    <input class="btn btn-light mt-3 w-50 align-self-center" type="submit" value="submit">
+  </form>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base/base.html" %}
+
+{% load bootstrap %}
+
+{% block title %} play {% endblock %}
+
+{% block content%}
+  <div class="container w-75 mt-3 ">
+  <div class="">
+    <h2 class="text-center">   {{ problem.title}} </h2>
+    <p class="fs-3">
+
+    {{ problem.statement|safe}}
+    </p>
+    <div class="d-flex">
+      <div class="w-100">
+
+      <h5>sample input:</h5>
+      <p class="bg-light w-50 text-break">
+        {{ problem.sample_input|safe}}
+      </p>
+      </div>
+
+      <div class="w-100">
+      <h5>sample output:</h5>
+      <p class="bg-light w-50">
+        {{ problem.sample_output|safe}}
+      </p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-3">
+    <form action="{% url 'upsolve-problem' problem.id %}" method="POST">
+      {% csrf_token %}
+      {{ form|bootstrap }}
+      <input class="btn btn-light mt-2" type="submit" value="submit">
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+# django git ignore file
+*.pyc
+__pycache__
+*.pyo
+*.pyd
+*.pyi
+*.egg-info
+dist/
+build/
+*.egg
+*.log
+*.swp
+*.swo
+*.bak
+*.tmp
+*.db
+*.sqlite3
+media/
+static/
+
+*.pyc
+
+/venv
+/.vscode
+.env
